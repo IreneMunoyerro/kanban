@@ -1,7 +1,6 @@
 import './style.css'
 import logo from '../../assets/logo.png'
-
-
+import { BsKanban } from 'react-icons/bs';
 
 function Header () {
     return(
@@ -11,7 +10,11 @@ function Header () {
         <img className='logo-neoland' src={logo} alt="" />
 
         <section className='version__container'>
-            <span>icon</span> <span>Version 1.0</span>
+    
+            <span>
+            <BsKanban></BsKanban>
+            </span> 
+            <span>Version 1.0</span>
         </section>
 
 
