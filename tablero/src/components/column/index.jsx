@@ -1,8 +1,26 @@
 import './style.css'
 import Task from '../task'
+import Form from '../form';
 import {AiOutlinePlus } from 'react-icons/ai';
+import { useState } from 'react';
 
-function Column () {
+function Column ({c}) {
+
+const[form, updateForm] = useState(false)
+
+// const[task,setTask] = useState([])
+
+const openForm = () => {
+updateForm(!false)
+}
+
+// const createTask = () => {
+//     setTask(prevTask => [...prevTask, task])
+ 
+    // (pokemon => updatePokemons(prevPokemons => [...prevPokemons, pokemon]));
+    //SE ACTUALIZA SET TASK CON CLONACION PARA IR AÑADIENDO OBJETOS AL ARRAY
+
+
     return(
         <>
             <div className='column__container'>
@@ -10,15 +28,18 @@ function Column () {
                 <section className='header__column'>
 
                     <article className='counter-title'>
-                     <div className='counter'></div>
-                     <span>TITULO</span>
+                        <div className='counter'></div>
+                        <span>{c.title}</span>
                     </article>
-                    
 
-                    <span><AiOutlinePlus></AiOutlinePlus></span>
+                    <span onClick={openForm}><AiOutlinePlus></AiOutlinePlus></span>
                 </section>
 
-            <Task></Task>
+                { form?
+                <Form openForm={openForm}></Form>
+                : ''
+                }
+
             </div>
         </>
     )

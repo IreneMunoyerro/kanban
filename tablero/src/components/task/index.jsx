@@ -1,13 +1,18 @@
 import './style.css'
+import {BsTrash} from 'react-icons/bs';
+import {FaRegDotCircle } from 'react-icons/fa';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 function Task () {
     return(
         <>
         <div className='task__container'>
             <section className='task-title'>
-                <div>S</div>
+                <div>
+                <AiOutlineCheckCircle  style={{ color: "red" }}></AiOutlineCheckCircle>
+                </div>
                 <p>TITLE</p>
-                <span>I</span>
+                <span><BsTrash></BsTrash></span>
             </section>
             <section className='task-creation'>
              <p>#id create on DATE HORA</p>
